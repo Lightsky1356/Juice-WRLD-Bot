@@ -708,6 +708,213 @@ const commands = {
     return interaction.followUp({ embeds: [resultEmbed] });
   },
 
+  async birthday({ interaction }) {
+    const now = new Date();
+    const birthday = new Date(now.getFullYear(), 11, 2);
+    if (now > birthday) birthday.setFullYear(birthday.getFullYear() + 1);
+    const diff = Math.ceil((birthday - now) / (1000 * 60 * 60 * 24));
+    const age = now.getFullYear() - 1998;
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Birthday")
+      .setDescription("**Jarad Anthony Higgins**")
+      .addFields(
+        { name: "Born", value: "December 2, 1998", inline: true },
+        { name: "Birthplace", value: "Chicago, Illinois", inline: true },
+        { name: "Age", value: `Would be ${age} years old`, inline: true },
+        { name: "Birthday", value: "December 2", inline: true },
+        { name: "Next Birthday", value: `${diff} days away`, inline: true },
+        { name: "Zodiac", value: "Sagittarius", inline: true },
+        { name: "Fun Fact", value: "Juice was born on the same month as his death month. He passed 6 days after his 21st birthday." }
+      )
+      .setThumbnail("https://i.scdn.co/image/ab6761610000e5eb23a60030944f7853c21565ef")
+      .setFooter({ text: "Legends Never Die \u2022 999" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
+  async countdown({ interaction }) {
+    const album = interaction.options.getString("album")?.toLowerCase();
+    const dates = [
+      { name: "Goodbye & Good Riddance", date: "2018-05-23", type: "Album Release" },
+      { name: "Wrld on Drugs", date: "2018-10-19", type: "Album Release" },
+      { name: "Death Race for Love", date: "2019-03-08", type: "Album Release" },
+      { name: "Juice WRLD's Birthday", date: "2026-12-02", type: "Birthday" },
+      { name: "Juice WRLD's Passing", date: "2026-12-08", type: "Anniversary" },
+      { name: "Legends Never Die", date: "2020-07-10", type: "Album Release" },
+      { name: "Fighting Demons", date: "2021-12-10", type: "Album Release" },
+      { name: "The Party Never Ends", date: "2024-11-29", type: "Album Release" },
+    ];
+
+    const now = new Date();
+    const upcoming = dates
+      .map((d) => {
+        const date = new Date(d.date);
+        date.setFullYear(now.getFullYear());
+        if (date < now) date.setFullYear(date.getFullYear() + 1);
+        return { ...d, dateObj: date, daysUntil: Math.ceil((date - now) / (1000 * 60 * 60 * 24)) };
+      })
+      .sort((a, b) => a.daysUntil - b.daysUntil);
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Countdowns")
+      .setDescription("Upcoming dates and anniversaries")
+      .addFields(
+        upcoming.map((d) => ({
+          name: d.name,
+          value: `${d.type} | **${d.daysUntil}** days | ${d.dateObj.toLocaleDateString()}`,
+          inline: true,
+        }))
+      )
+      .setFooter({ text: "Legends Never Die \u2022 999" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
+  async today({ interaction }) {
+    const events = {
+      "01-04": "Juice WRLD's first SoundCloud upload 'Forever' (2015)",
+      "01-17": "Eminem's 'Godzilla' featuring Juice dropped (2020)",
+      "02-22": "All Girls Are the Same music video released (2018)",
+      "03-08": "Death Race for Love released (2019)",
+      "03-08": "Death Race for Love debuted at #1 on Billboard 200 (2019)",
+      "05-22": "Goodbye & Good Riddance released (2018)",
+      "05-28": "GAGR re-release with new songs (2021)",
+      "06-15": "9 9 9 EP released (2017)",
+      "07-10": "Legends Never Die released (2020)",
+      "07-10": "5 songs hit top 10 simultaneously (2020)",
+      "08-08": "Juice's late night TV debut on Jimmy Kimmel Live! (2018)",
+      "09-09": "The Pre-Party EP released (2024)",
+      "10-19": "Wrld on Drugs released (2018)",
+      "10-28": "Bandit released - last song before passing (2019)",
+      "11-15": "AGATS2 (Insecure) released (2024)",
+      "11-29": "The Party Never Ends released (2024)",
+      "12-02": "Juice WRLD's Birthday (1998)",
+      "12-02": "Real Shit with Benny Blanco released (2020)",
+      "12-08": "Juice WRLD's passing (2019)",
+      "12-08": "Reminds Me of You released (2020)",
+      "12-10": "Fighting Demons released (2021)",
+    };
+
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const key = `${month}-${day}`;
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle(`Today in Juice WRLD History`)
+      .setDescription(`**${today.toLocaleDateString("en-US", { month: "long", day: "numeric" })}**`);
+
+    if (events[key]) {
+      embed.addFields({ name: "This Day", value: events[key] });
+    } else {
+      embed.addFields({ name: "This Day", value: "No major Juice WRLD events on this date. But legends never die." });
+    }
+
+    const recentEvents = Object.entries(events)
+      .filter(([k]) => k !== key)
+      .sort((a, b) => {
+        const aDiff = Math.abs(parseInt(a[0].split("-")[1]) - today.getDate());
+        const bDiff = Math.abs(parseInt(b[0].split("-")[1]) - today.getDate());
+        return aDiff - bDiff;
+      })
+      .slice(0, 3);
+
+    if (recentEvents.length > 0) {
+      embed.addFields({
+        name: "Other Notable Dates",
+        value: recentEvents.map(([, v]) => `\u2022 ${v}`).join("\n"),
+      });
+    }
+
+    embed
+      .setFooter({ text: "Legends Never Die \u2022 999" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
+  async anniversary({ interaction }) {
+    const now = new Date();
+    const anniversaries = [
+      { name: "Goodbye & Good Riddance", date: new Date(2018, 4, 23), type: "Album" },
+      { name: "Wrld on Drugs", date: new Date(2018, 9, 19), type: "Album" },
+      { name: "Death Race for Love", date: new Date(2019, 2, 8), type: "Album" },
+      { name: "Legends Never Die", date: new Date(2020, 6, 10), type: "Album" },
+      { name: "Fighting Demons", date: new Date(2021, 11, 10), type: "Album" },
+      { name: "The Party Never Ends", date: new Date(2024, 10, 29), type: "Album" },
+      { name: "Juice WRLD's Passing", date: new Date(2019, 11, 8), type: "Anniversary" },
+    ];
+
+    const upcoming = anniversaries
+      .map((a) => {
+        const next = new Date(now.getFullYear(), a.date.getMonth(), a.date.getDate());
+        if (next < now) next.setFullYear(next.getFullYear() + 1);
+        const years = next.getFullYear() - a.date.getFullYear();
+        return { ...a, nextDate: next, years, daysUntil: Math.ceil((next - now) / (1000 * 60 * 60 * 24)) };
+      })
+      .sort((a, b) => a.daysUntil - b.daysUntil);
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Anniversaries")
+      .addFields(
+        upcoming.map((a) => ({
+          name: a.name,
+          value: `${a.years} year${a.years > 1 ? "s" : ""} anniversary | **${a.daysUntil}** days | ${a.nextDate.toLocaleDateString()}`,
+          inline: true,
+        }))
+      )
+      .setFooter({ text: "Legends Never Die \u2022 999" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
+  async timeline({ interaction }) {
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Timeline")
+      .setDescription("The life and career of Jarad Anthony Higgins")
+      .addFields(
+        { name: "1998", value: "Born December 2 in Chicago, Illinois", inline: true },
+        { name: "2001", value: "Parents divorce, moves with mother", inline: true },
+        { name: "2002", value: "Learns piano at age 4", inline: true },
+        { name: "2015", value: "First track 'Forever' on SoundCloud as JuicetheKidd", inline: true },
+        { name: "2017", value: "Joins Internet Money, releases 9 9 9 EP, signs with Grade A Productions", inline: true },
+        { name: "2018 (Feb)", value: "All Girls Are the Same music video drops", inline: true },
+        { name: "2018 (Mar)", value: "Signs with Interscope Records for $3 million", inline: true },
+        { name: "2018 (May)", value: "Lucid Dreams peaks at #2, Goodbye & Good Riddance drops", inline: true },
+        { name: "2018 (Aug)", value: "Late night TV debut on Jimmy Kimmel Live!", inline: true },
+        { name: "2018 (Oct)", value: "Wrld on Drugs with Future, Armed and Dangerous", inline: true },
+        { name: "2018 (Dec)", value: "Too Soon.. EP tribute to Lil Peep & XXXTentacion", inline: true },
+        { name: "2019 (Mar)", value: "Death Race for Love debuts at #1", inline: true },
+        { name: "2019 (Jun)", value: "Nicki Wrld Tour with Nicki Minaj", inline: true },
+        { name: "2019 (Sep)", value: "All Night with BTS, Hate Me with Ellie Goulding", inline: true },
+        { name: "2019 (Oct)", value: "Bandit with YoungBoy - last released song", inline: true },
+        { name: "2019 (Dec 8)", value: "Juice WRLD passes away at age 21", inline: true },
+        { name: "2020 (Jan)", value: "Featured on Eminem's Godzilla", inline: true },
+        { name: "2020 (Jul)", value: "Legends Never Die - 5 songs in top 10 simultaneously", inline: true },
+        { name: "2020 (Dec)", value: "Real Shit with Benny Blanco", inline: true },
+        { name: "2021 (Dec)", value: "Fighting Demons released", inline: true },
+        { name: "2021", value: "Juice Wrld: Into the Abyss documentary", inline: true },
+        { name: "2022", value: "Cigarettes becomes viral hit", inline: true },
+        { name: "2024 (Sep)", value: "Fortnite virtual concert", inline: true },
+        { name: "2024 (Nov)", value: "The Party Never Ends released", inline: true },
+        { name: "2026 (Jul)", value: "The Outsiders announced via Instagram", inline: true },
+      )
+      .setThumbnail("https://i.scdn.co/image/ab6761610000e5eb23a60030944f7853c21565ef")
+      .setFooter({ text: "Legends Never Die \u2022 999" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
   async guess({ interaction }) {
     const song = GUESS_SONGS[Math.floor(Math.random() * GUESS_SONGS.length)];
     const shuffledOptions = shuffleArray(GUESS_SONGS.map((s) => s.song)).slice(0, 4);

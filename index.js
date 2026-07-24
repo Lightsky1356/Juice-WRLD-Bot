@@ -82,6 +82,21 @@ const slashCommands = [
   new SlashCommandBuilder()
     .setName("guess")
     .setDescription("Guess the Juice WRLD song from a lyric"),
+  new SlashCommandBuilder()
+    .setName("birthday")
+    .setDescription("Juice WRLD birthday info"),
+  new SlashCommandBuilder()
+    .setName("countdown")
+    .setDescription("Days until Juice WRLD events"),
+  new SlashCommandBuilder()
+    .setName("today")
+    .setDescription("Today in Juice WRLD history"),
+  new SlashCommandBuilder()
+    .setName("anniversary")
+    .setDescription("Upcoming Juice WRLD anniversaries"),
+  new SlashCommandBuilder()
+    .setName("timeline")
+    .setDescription("Juice WRLD career timeline"),
 ];
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
