@@ -34,6 +34,39 @@ const slashCommands = [
   new SlashCommandBuilder()
     .setName("juicegif")
     .setDescription("Get a random Juice WRLD GIF"),
+  new SlashCommandBuilder()
+    .setName("era")
+    .setDescription("Learn about Juice WRLD eras")
+    .addStringOption((option) =>
+      option.setName("name").setDescription("Era name (1.0-5.0)").setRequired(false)
+    ),
+  new SlashCommandBuilder()
+    .setName("juiceart")
+    .setDescription("Get random Juice WRLD fan art"),
+  new SlashCommandBuilder()
+    .setName("meme")
+    .setDescription("Get a random Juice WRLD meme"),
+  new SlashCommandBuilder()
+    .setName("daily")
+    .setDescription("Get daily Juice WRLD content"),
+  new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("List all commands"),
+  new SlashCommandBuilder()
+    .setName("info")
+    .setDescription("Bot info"),
+  new SlashCommandBuilder()
+    .setName("settings")
+    .setDescription("Server settings (admin only)"),
+  new SlashCommandBuilder()
+    .setName("session")
+    .setDescription("Recording session info for a song")
+    .addStringOption((option) =>
+      option.setName("song").setDescription("Song name").setRequired(false)
+    ),
+  new SlashCommandBuilder()
+    .setName("bio")
+    .setDescription("Jarad Anthony Higgins info and bio"),
 ];
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
