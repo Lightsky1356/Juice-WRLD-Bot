@@ -108,6 +108,203 @@ const SESSIONS = [
   { song: "Hear Me Calling", producer: "Nick Mira", note: "Single from Death Race for Love. Music video directed by Cole Bennett.", length: "3:09" },
 ];
 
+const ALBUM_DATA = {
+  gagr: {
+    name: "Goodbye & Good Riddance",
+    year: 2018,
+    type: "Studio Album",
+    color: 0xff4500,
+    image: "https://i.scdn.co/image/ab6761610000f17823a60030944f7853c21565ef",
+    tracks: [
+      "Intro", "All Girls Are the Same", "Lucid Dreams", "Verified",
+      "Lean Wit Me", "I'm Still", "Benny Blanco", "Wasted",
+      "Black & White", "Beat It", "Armed and Dangerous", "Cigarettes",
+      "Hurt Me", "Long Gone", "Paranoia", "Scared of Love",
+      "Used To", "Karma", "734", "Moonshine"
+    ],
+    singles: ["All Girls Are the Same", "Lucid Dreams", "Lean Wit Me", "Wasted", "Armed and Dangerous"],
+    producers: "Nick Mira, Cubeatz, Boi-1da, Frank Dukes",
+    label: "Grade A, Interscope",
+    certification: "3x Platinum",
+    peak: "#4 Billboard 200",
+    description: "Juice's debut studio album. A raw, emotional project that cemented him as a star. 'Lucid Dreams' sampled Sting and became one of the biggest songs of 2018.",
+  },
+  wod: {
+    name: "Wrld on Drugs",
+    year: 2018,
+    type: "Collaborative Mixtape",
+    color: 0x1e90ff,
+    image: "https://i.scdn.co/image/ab6761610000f17823a60030944f7853c21565ef",
+    tracks: [
+      "Jet Lag", "Astronauts", "Fine China", "Trade Off",
+      "Here We Go Again", "Shorty", "Realer N Realer", "No Issues",
+      "WRLD On Drugs", "Shooters", "Real Love", "Hide",
+      "XO Tour Llif3", "All Out", "Feelin' Pearly"
+    ],
+    singles: ["Fine China", "Realer N Realer"],
+    producers: "Nick Mira, Wheezy, Tay Keith, Dre Moon",
+    label: "Grade A, Epic",
+    certification: "Platinum",
+    peak: "#2 Billboard 200",
+    description: "Juice and Future's collaborative mixtape. Blends Juice's melodic emo style with Future's trap sound.",
+  },
+  drfl: {
+    name: "Death Race for Love",
+    year: 2019,
+    type: "Studio Album",
+    color: 0xdc143c,
+    image: "https://i.scdn.co/image/ab67618600001016580580ecfee3454ddf01c6d2",
+    tracks: [
+      "Empty", "Maze", "Heere Me Calling", "Robbery", "Flava",
+      "Athan", "Heal Me", "Fast", "Big", "Bogus",
+      "Ring Ring", "Desire", "Ransom", "20 Min", "Legacy",
+      "Ukukelele", "ON GOD", "Wishing Well", "Screw Juice",
+      "All Night", "Make Believe", "Won't Let Go", "I Want It"
+    ],
+    singles: ["Robbery", "Hear Me Calling", "Fast"],
+    producers: "Nick Mira, Mitch Mula, Boi-1da, Andrew Watt",
+    label: "Grade A, Interscope",
+    certification: "Platinum",
+    peak: "#1 Billboard 200",
+    description: "Juice's second studio album and first #1 debut. More mature and ambitious than GAGR. Features the hit 'Robbery' and the TikTok viral '20 Min'.",
+  },
+  lnd: {
+    name: "Legends Never Die",
+    year: 2020,
+    type: "Posthumous Album",
+    color: 0x9400d3,
+    image: "https://i.scdn.co/image/ab6761610000f17823a60030944f7853c21565ef",
+    tracks: [
+      "Anxiety (Intro)", "Conversations", "Titanic", "Bad Energy",
+      "Righteous", "Blood on My Jeans", "Smile", "Tell Me U Luv Me",
+      "Hate the Other Side", "Get Through It", "Life's a Mess",
+      "Come & Go", "I Want It", "Fighting Demons", "Wishing Well",
+      "Sorrow", "By Your Side", "Stay High", "Can't Decide",
+      "Heartbound", "Juicy Wrld"
+    ],
+    singles: ["Righteous", "Tell Me U Luv Me", "Come & Go", "Life's a Mess", "Wishing Well"],
+    producers: "Nick Mira, Marshmello, Benny Blanco, Andrew Watt",
+    label: "Grade A, Interscope",
+    certification: "2x Platinum",
+    peak: "#1 Billboard 200",
+    description: "First posthumous album. 21 tracks representing Juice's best unreleased music. 5 songs hit the top 10 simultaneously — only The Beatles and Drake had done this.",
+  },
+  fd: {
+    name: "Fighting Demons",
+    year: 2021,
+    type: "Posthumous Album",
+    color: 0x2e8b57,
+    image: "https://i.scdn.co/image/ab67618600001016580580ecfee3454ddf01c6d2",
+    tracks: [
+      "Sorrow", "Born to Die", "Already Dead", "Never End",
+      "Fighting Demons", "Wandered to LA", "Guitar in My Room",
+      "Doomsday", "Girl of My Dreams", "Relocate", "Go Hard",
+      "Cigarettes", "Sometimes", "Diet Lug", "You Got the Key",
+      "From My Window"
+    ],
+    singles: ["Already Dead", "Wandered to LA", "Girl of My Dreams"],
+    producers: "Nick Mira, Hit-Boy, Larry June",
+    label: "Grade A, Interscope",
+    certification: "Platinum",
+    peak: "#5 Billboard 200",
+    description: "Second posthumous album. Includes 'Cigarettes' which became a viral hit. Features Suga from BTS and Justin Bieber.",
+  },
+  tpne: {
+    name: "The Party Never Ends",
+    year: 2024,
+    type: "Posthumous Album",
+    color: 0xff8c00,
+    image: "https://i.scdn.co/image/ab67618600001016580580ecfee3454ddf01c6d2",
+    tracks: [
+      "The Party Never Ends", "AGATS2 (Insecure)", "Lucid Dreams (Revisited)",
+      "Adore You", "Empty Wrist", "Goodbye & Good Riddance 2.0",
+      "Cavalier", "Celebrate", "Sativa", "Oxy Cotton",
+      "Feline", "World Tour", "Crash", "All the Way",
+      "Backyard Boy", "Last Call", "The End"
+    ],
+    singles: ["AGATS2 (Insecure)", "Lucid Dreams (Revisited)"],
+    producers: "Nick Mira, Metro Boomin, Wheezy",
+    label: "Grade A, Interscope",
+    certification: "N/A",
+    peak: "N/A",
+    description: "Juice's fifth and final studio album. Announced in 2023, released November 2024. Features Nicki Minaj and a virtual Fortnite concert.",
+  },
+  outsiders: {
+    name: "The Outsiders",
+    year: 2026,
+    type: "Posthumous Album",
+    color: 0x00ced1,
+    image: "https://i.scdn.co/image/ab6761610000f17823a60030944f7853c21565ef",
+    tracks: ["TBA"],
+    singles: ["TBA"],
+    producers: "TBA",
+    label: "Grade A, Interscope",
+    certification: "N/A",
+    peak: "N/A",
+    description: "Juice's sixth studio album. Announced July 2026 via Instagram. Details are still unknown. The party continues.",
+  },
+};
+
+const TRIVIA_QUESTIONS = [
+  { q: "What was Juice WRLD's real name?", options: ["Jarad Anthony Higgins", "Jarad Williams", "Jarad Smith", "Jarad Brown"], answer: 0 },
+  { q: "When was Juice WRLD born?", options: ["December 2, 1998", "March 15, 1999", "July 4, 1997", "October 31, 2000"], answer: 0 },
+  { q: "What city was Juice WRLD born in?", options: ["Chicago, Illinois", "Los Angeles, California", "Atlanta, Georgia", "New York City, New York"], answer: 0 },
+  { q: "What was the name of Juice's debut album?", options: ["Goodbye & Good Riddance", "Death Race for Love", "Legends Never Die", "9 9 9"], answer: 0 },
+  { q: "Which song from GAGR went Diamond?", options: ["Lucid Dreams", "All Girls Are the Same", "Lean Wit Me", "Wasted"], answer: 0 },
+  { q: "What was the original name Juice WRLD used on SoundCloud?", options: ["JuicetheKidd", "JuiceBoy", "JuiceMan", "JuiceKing"], answer: 0 },
+  { q: "What 1992 film inspired Juice's stage name?", options: ["Juice", "Boyz n the Hood", "Menace II Society", "Friday"], answer: 0 },
+  { q: "Which artist did Juice collaborate with on 'Fine China'?", options: ["Future", "Lil Uzi Vert", "Travis Scott", "Lil Baby"], answer: 0 },
+  { q: "What instrument did Juice learn at age 4?", options: ["Piano", "Guitar", "Drums", "Violin"], answer: 0 },
+  { q: "How many songs hit the top 10 simultaneously with LND?", options: ["5", "3", "7", "2"], answer: 0 },
+  { q: "Which artist featured on 'Come & Go'?", options: ["Marshmello", "Skrillex", "Diplo", "Calvin Harris"], answer: 0 },
+  { q: "What was Juice's last released song before his death?", options: ["Bandit", "Robbery", "Fast", "Hear Me Calling"], answer: 0 },
+  { q: "What record label signed Juice WRLD?", options: ["Grade A Productions", "Quality Control", "Young Money", "Def Jam"], answer: 0 },
+  { q: "Who is Juice WRLD's second cousin?", options: ["Young Dolph", "Future", "Lil Bibby", "Lil Peep"], answer: 0 },
+  { q: "What high school did Juice attend?", options: ["Homewood-Flossmoor", "South Side", "Lincoln Park", "De La Salle"], answer: 0 },
+  { q: "What was the name of Juice's collaborative mixtape with Future?", options: ["Wrld on Drugs", "Wrld on Fire", "Wrld on Top", "Wrld on Me"], answer: 0 },
+  { q: "Which BTS members featured on Juice's songs?", options: ["RM and Suga", "Jin and Jungkook", "V and Jimin", "J-Hope and Suga"], answer: 0 },
+  { q: "What year did Juice WRLD sign with Interscope?", options: ["2018", "2017", "2019", "2016"], answer: 0 },
+  { q: "What streaming platform did Juice reach 1 billion streams on?", options: ["Spotify", "Apple Music", "YouTube Music", "Tidal"], answer: 0 },
+  { q: "What was Juice WRLD's zodiac sign?", options: ["Sagittarius", "Scorpio", "Capricorn", "Aquarius"], answer: 0 },
+  { q: "What was the name of the Fortnite concert event?", options: ["Into the Abyss", "Juice WRLD World", "999 Concert", "Legends Never Die Live"], answer: 0 },
+  { q: "Which artist did Juice mentor?", options: ["The Kid Laroi", "Lil Tjay", "Polo G", "Iann Dior"], answer: 0 },
+  { q: "What was the name of Juice's 2020 documentary?", options: ["Into the Abyss", "Legends Never Die", "999 Forever", "Juice WRLD Story"], answer: 0 },
+  { q: "What did Juice sample in 'Lucid Dreams'?", options: ["Shape of My Heart by Sting", "Stan by Eminem", "Space Oddity by David Bowie", "Bohemian Rhapsody by Queen"], answer: 0 },
+  { q: "What album did 'Bandit' appear on?", options: ["Death Race for Love", "Goodbye & Good Riddance", "Legends Never Die", "Wrld on Drugs"], answer: 0 },
+];
+
+function shuffleArray(arr) {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+const GUESS_SONGS = [
+  { song: "Lucid Dreams", lyric: "I still see your shadows in the room", hint: "2018, sampled Sting" },
+  { song: "All Girls Are the Same", lyric: "All girls are the same, they're rotting my brain", hint: "2018, GAGR" },
+  { song: "Lean Wit Me", lyric: "Lean with me, pop with me", hint: "2018, GAGR" },
+  { song: "Robbery", lyric: "She told me to put my heart in the bag and nobody gets hurt", hint: "2019, DRFL" },
+  { song: "Fast", lyric: "I move so fast, they can't catch me", hint: "2019, DRFL" },
+  { song: "Wishing Well", lyric: "Toss my pain with my wishes in a wishing well", hint: "2020, LND" },
+  { song: "Come & Go", lyric: "We could've had it all", hint: "2020, with Marshmello" },
+  { song: "Righteous", lyric: "Righteous, righteous", hint: "2020, first posthumous single" },
+  { song: "Already Dead", lyric: "I'm already dead, I'm already dead", hint: "2021, FD" },
+  { song: "Bandit", lyric: "I'm a bandit, got bands in the safe", hint: "2019, with NBA YoungBoy" },
+  { song: "Hear Me Calling", lyric: "I've been up for three days, I'm going crazy", hint: "2019, DRFL" },
+  { song: "Cigarettes", lyric: "She's smoking cigarettes, watching Captain Hook", hint: "2022, FD deluxe" },
+  { song: "Empty", lyric: "Empty, I feel so empty", hint: "2019, DRFL" },
+  { song: "Maze", lyric: "Running through the maze, I can't find my way", hint: "2019, DRFL" },
+  { song: "Conversations", lyric: "Conversations in my head, they never end", hint: "2020, LND" },
+  { song: "Life's a Mess", lyric: "Life's a mess, I'm a mess", hint: "2020, with Halsey" },
+  { song: "Wandered to LA", lyric: "I wandered to LA, looking for a change", hint: "2021, with Justin Bieber" },
+  { song: "Smile", lyric: "You make me smile when I'm feeling down", hint: "2020, with The Weeknd" },
+  { song: "Girl of My Dreams", lyric: "She's the girl of my dreams", hint: "2021, with Suga of BTS" },
+  { song: "AGATS2", lyric: "All girls are the same, round 2", hint: "2024, with Nicki Minaj" },
+];
+
 const commands = {
   async quote({ interaction }) {
     const embed = new EmbedBuilder()
@@ -361,6 +558,194 @@ const commands = {
       .setTimestamp();
 
     return interaction.reply({ embeds: [embed] });
+  },
+
+  async album({ interaction }) {
+    const input = interaction.options.getString("name")?.toLowerCase();
+    if (!input) {
+      const embed = new EmbedBuilder()
+        .setColor(0x8b0000)
+        .setTitle("Juice WRLD Discography")
+        .setDescription("All albums. Use `/album <name>` for details.")
+        .addFields(
+          Object.entries(ALBUM_DATA).map(([key, a]) => ({
+            name: a.name,
+            value: `${a.year} | ${a.type} | ${a.peak}`,
+            inline: true,
+          }))
+        )
+        .setFooter({ text: "Juice WRLD Albums" })
+        .setTimestamp();
+      return interaction.reply({ embeds: [embed] });
+    }
+
+    const album = ALBUM_DATA[input]
+      || Object.values(ALBUM_DATA).find((a) => a.name.toLowerCase().includes(input));
+
+    if (!album) {
+      return interaction.reply({ content: "Album not found. Try: gagr, wod, drfl, lnd, fd, tpne, outsiders", ephemeral: true });
+    }
+
+    const trackList = album.tracks.map((t, i) => `${i + 1}. ${t}`).join("\n");
+    const embed = new EmbedBuilder()
+      .setColor(album.color)
+      .setTitle(album.name)
+      .setDescription(album.description)
+      .addFields(
+        { name: "Year", value: String(album.year), inline: true },
+        { name: "Type", value: album.type, inline: true },
+        { name: "Peak", value: album.peak, inline: true },
+        { name: "Certification", value: album.certification, inline: true },
+        { name: "Label", value: album.label, inline: true },
+        { name: "Producers", value: album.producers },
+        { name: "Singles", value: album.singles.join(", ") },
+        { name: `Tracklist (${album.tracks.length} songs)`, value: trackList }
+      )
+      .setThumbnail(album.image)
+      .setFooter({ text: "Juice WRLD Albums" })
+      .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+
+  async trivia({ interaction }) {
+    const q = TRIVIA_QUESTIONS[Math.floor(Math.random() * TRIVIA_QUESTIONS.length)];
+    const shuffledOptions = shuffleArray(q.options);
+    const correctAnswer = shuffledOptions.indexOf(q.options[q.answer]);
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Trivia")
+      .setDescription(q.q)
+      .addFields(
+        shuffledOptions.map((opt, i) => ({
+          name: `${i + 1}.`,
+          value: opt,
+          inline: true,
+        }))
+      )
+      .setFooter({ text: "Reply with the number of your answer!" })
+      .setTimestamp();
+
+    await interaction.reply({ embeds: [embed] });
+
+    const filter = (m) => m.author.id === interaction.user.id;
+    try {
+      const collected = await interaction.channel.awaitMessages({ filter, max: 1, time: 15000, errors: ["time"] });
+      const response = collected.first().content;
+      const answerNum = parseInt(response);
+
+      if (answerNum === correctAnswer + 1) {
+        await interaction.followUp({ content: `Correct! The answer is: **${q.options[q.answer]}**` });
+      } else {
+        await interaction.followUp({ content: `Wrong! The answer is: **${q.options[q.answer]}**` });
+      }
+    } catch {
+      await interaction.followUp({ content: `Time's up! The answer is: **${q.options[q.answer]}**` });
+    }
+  },
+
+  async quiz({ interaction }) {
+    const questions = shuffleArray(TRIVIA_QUESTIONS).slice(0, 5);
+    let score = 0;
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Juice WRLD Quiz")
+      .setDescription(`5 questions about Juice WRLD. Let's go!`)
+      .setFooter({ text: "Answer each question with a number (1-4)" })
+      .setTimestamp();
+
+    await interaction.reply({ embeds: [embed] });
+
+    for (let i = 0; i < questions.length; i++) {
+      const q = questions[i];
+      const shuffledOptions = shuffleArray(q.options);
+      const correctAnswer = shuffledOptions.indexOf(q.options[q.answer]);
+
+      const questionEmbed = new EmbedBuilder()
+        .setColor(0x8b0000)
+        .setTitle(`Question ${i + 1}/5`)
+        .setDescription(q.q)
+        .addFields(
+          shuffledOptions.map((opt, idx) => ({
+            name: `${idx + 1}.`,
+            value: opt,
+            inline: true,
+          }))
+        )
+        .setTimestamp();
+
+      await interaction.followUp({ embeds: [questionEmbed] });
+
+      const filter = (m) => m.author.id === interaction.user.id;
+      try {
+        const collected = await interaction.channel.awaitMessages({ filter, max: 1, time: 15000, errors: ["time"] });
+        const response = collected.first().content;
+        const answerNum = parseInt(response);
+
+        if (answerNum === correctAnswer + 1) {
+          score++;
+          await interaction.followUp({ content: `Correct! (${score}/${i + 1})` });
+        } else {
+          await interaction.followUp({ content: `Wrong! The answer is: **${q.options[q.answer]}** (${score}/${i + 1})` });
+        }
+      } catch {
+        await interaction.followUp({ content: `Time's up! The answer is: **${q.options[q.answer]}** (${score}/${i + 1})` });
+      }
+    }
+
+    const resultEmbed = new EmbedBuilder()
+      .setColor(score >= 4 ? 0x00ff00 : score >= 2 ? 0xffa500 : 0xff0000)
+      .setTitle("Quiz Complete!")
+      .setDescription(`You scored **${score}/5**!`)
+      .addFields({
+        name: "Rating",
+        value: score === 5 ? "True Juice WRLD Fan!" : score >= 3 ? "Big Fan" : "Casual Listener",
+      })
+      .setTimestamp();
+
+    return interaction.followUp({ embeds: [resultEmbed] });
+  },
+
+  async guess({ interaction }) {
+    const song = GUESS_SONGS[Math.floor(Math.random() * GUESS_SONGS.length)];
+    const shuffledOptions = shuffleArray(GUESS_SONGS.map((s) => s.song)).slice(0, 4);
+    if (!shuffledOptions.includes(song.song)) {
+      shuffledOptions[Math.floor(Math.random() * 4)] = song.song;
+    }
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle("Guess the Song")
+      .setDescription(`*"${song.lyric}"*`)
+      .addFields(
+        shuffledOptions.map((opt, i) => ({
+          name: `${i + 1}.`,
+          value: opt,
+          inline: true,
+        }))
+      )
+      .setFooter({ text: "Reply with the number of your guess!" })
+      .setTimestamp();
+
+    await interaction.reply({ embeds: [embed] });
+
+    const filter = (m) => m.author.id === interaction.user.id;
+    try {
+      const collected = await interaction.channel.awaitMessages({ filter, max: 1, time: 15000, errors: ["time"] });
+      const response = collected.first().content;
+      const answerNum = parseInt(response);
+      const guessedSong = shuffledOptions[answerNum - 1];
+
+      if (guessedSong === song.song) {
+        await interaction.followUp({ content: `Correct! The song is: **${song.song}** ${song.hint}` });
+      } else {
+        await interaction.followUp({ content: `Wrong! The song is: **${song.song}** ${song.hint}` });
+      }
+    } catch {
+      await interaction.followUp({ content: `Time's up! The song is: **${song.song}** ${song.hint}` });
+    }
   },
 };
 

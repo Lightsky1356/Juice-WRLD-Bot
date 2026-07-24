@@ -67,6 +67,21 @@ const slashCommands = [
   new SlashCommandBuilder()
     .setName("bio")
     .setDescription("Jarad Anthony Higgins info and bio"),
+  new SlashCommandBuilder()
+    .setName("album")
+    .setDescription("Get album info")
+    .addStringOption((option) =>
+      option.setName("name").setDescription("Album name (gagr, wod, drfl, lnd, fd, tpne, outsiders)").setRequired(false)
+    ),
+  new SlashCommandBuilder()
+    .setName("trivia")
+    .setDescription("Juice WRLD trivia question"),
+  new SlashCommandBuilder()
+    .setName("quiz")
+    .setDescription("5-question Juice WRLD quiz"),
+  new SlashCommandBuilder()
+    .setName("guess")
+    .setDescription("Guess the Juice WRLD song from a lyric"),
 ];
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
