@@ -1,0 +1,4 @@
+node_modules/
+.env
+juicepics_cache/
+juicewrld-bot.zip
